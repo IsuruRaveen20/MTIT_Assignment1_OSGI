@@ -1,0 +1,5 @@
+package publisher_milkshake;
+
+public class ServicePublisherImpl implements MilkShakePublisher {
+
+}

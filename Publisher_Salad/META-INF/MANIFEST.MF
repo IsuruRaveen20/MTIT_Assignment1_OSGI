@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Publisher_Salad
+Bundle-SymbolicName: Publisher_Salad
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: publisher_salad.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-14
+Automatic-Module-Name: Publisher.Salad
+Import-Package: org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy

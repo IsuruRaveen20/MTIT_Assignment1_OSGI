@@ -1,0 +1,5 @@
+package publisher_milkshake;
+
+public interface MilkShakePublichser {
+
+}

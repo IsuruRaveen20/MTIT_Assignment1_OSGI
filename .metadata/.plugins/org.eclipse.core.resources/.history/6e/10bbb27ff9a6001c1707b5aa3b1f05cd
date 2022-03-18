@@ -1,0 +1,23 @@
+package publisher_salad;
+
+public class ServicePublisherImpl implements SaladPublisher {
+
+	@Override
+	public void displaySalad(int a) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public double getPrice(int type, int salad) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String getName(int type, int salad) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

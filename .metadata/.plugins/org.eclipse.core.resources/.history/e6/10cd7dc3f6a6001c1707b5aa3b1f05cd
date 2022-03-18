@@ -1,0 +1,5 @@
+package publisher_salad;
+
+public class ServicePublisherImpl implements SaladPublisher {
+
+}
