@@ -11,26 +11,21 @@ public class ServicePublisherImpl implements MilkShakePublisher {
     HashMap<String, Double> oreo_milkShake = new HashMap <String, Double>();
     
     public ServicePublisherImpl() {
-        this.nutella_milkShake.put("Glass", 740.0);
-        this.nutella_milkShake.put("TakeAway", 800.0);
+        this.nutella_milkShake.put("Glass", 740.00);
+        this.nutella_milkShake.put("TakeAway", 800.00);
         
-        this.choclate_milkShake.put("Glass", 600.0);
-        this.choclate_milkShake.put("TakeAway", 750.0);
+        this.choclate_milkShake.put("Glass", 600.00);
+        this.choclate_milkShake.put("TakeAway", 750.00);
         
-        this.vanila_milkShake.put("Glass", 600.0);
-        this.vanila_milkShake.put("TakeAway", 700.0);
+        this.vanila_milkShake.put("Glass", 600.00);
+        this.vanila_milkShake.put("TakeAway", 700.00);
         
-        this.oreo_milkShake.put("Glass", 740.0);
-        this.oreo_milkShake.put("TakeAway", 800.0);
+        this.oreo_milkShake.put("Glass", 740.00);
+        this.oreo_milkShake.put("TakeAway", 800.00);
     }
     
     public void displayMilkShake(int type) {
         int count;
-//        String name;
-//        Iterator i;
-//        String key4;
-//        String value4;
-        
         switch(type) {
         case 1:
             count = 1;
@@ -84,37 +79,37 @@ public class ServicePublisherImpl implements MilkShakePublisher {
         if (type == 1) {
             switch(milkShake) {
             case 1:
-                price = (Double)this.nutella_milkShake.get("Glass");
+                price = (Double)this.nutella_milkShake.get("TakeAway");
                 break;
             case 2:
-                price = (Double)this.nutella_milkShake.get("TakeAway");
+                price = (Double)this.nutella_milkShake.get("Glass");
                 break;
             }
         } else if (type == 2) {
             switch(milkShake) {
             case 1:
-                price = (Double)this.choclate_milkShake.get("Glass");
+                price = (Double)this.choclate_milkShake.get("TakeAway");
                 break;
             case 2:
-                price = (Double)this.choclate_milkShake.get("TakeAway");
+                price = (Double)this.choclate_milkShake.get("Glass");
                 break;
             }
         } else if (type == 3) {
             switch(milkShake) {
             case 1:
-                price = (Double)this.vanila_milkShake.get("Glass");
+                price = (Double)this.vanila_milkShake.get("TakeAway");
                 break;
             case 2:
-                price = (Double)this.vanila_milkShake.get("TakeAway");
+                price = (Double)this.vanila_milkShake.get("Glass");
                 break;
             }
         } else if (type == 4) {
             switch(milkShake) {
             case 1:
-                price = (Double)this.oreo_milkShake.get("Glass");
+                price = (Double)this.oreo_milkShake.get("TakeAway");
                 break;
             case 2:
-                price = (Double)this.oreo_milkShake.get("TakeAway");
+                price = (Double)this.oreo_milkShake.get("Glass");
                 break;
         }
       }
@@ -141,7 +136,8 @@ public class ServicePublisherImpl implements MilkShakePublisher {
                 name = "TakeAway";
                 break;
             }
-        } else if (type == 3) {
+        } 
+        else if (type == 3) {
             switch(milkShake) {
             case 1:
                 name = "Glass";

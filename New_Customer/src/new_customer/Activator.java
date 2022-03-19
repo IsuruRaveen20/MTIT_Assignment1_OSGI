@@ -27,7 +27,7 @@ public class Activator implements BundleActivator {
 		serviceReferenceSalad = context.getServiceReference(SaladPublisher.class.getName());
 		SaladPublisher saladPublisher = (SaladPublisher) context.getService(serviceReferenceSalad);
     
-        System.out.println("New Customer has started.");
+        System.out.println("New Customer Started.");
         System.out.println("Fruit Items & Juice : ");
         System.out.println("1. Milk Shake");
         System.out.println("2. Salad\n");
@@ -47,7 +47,7 @@ public class Activator implements BundleActivator {
 				System.out.println("3. Vanila Milk Shake");
 				System.out.println("4. Oreo Milk Shake");
 
-				System.out.println("\nPress O to Exit\n");
+				System.out.println("\nPress O to Exit from the System\n");
 				System.out.print("Select a type: ");
 				type = scanner.nextInt();
 
@@ -72,8 +72,8 @@ public class Activator implements BundleActivator {
 				System.out.println("\nSalad Type: ");
 				System.out.println("1.  Dinner Salad");
 				System.out.println("2.  Taco Salad");
-				System.out.println("3.  Chickern Pizza");
-				System.out.println("4.  Fruit Pizza");
+				System.out.println("3.  Chickern Salad");
+				System.out.println("4.  Fruit Salad");
 
 				System.out.println("\nPress O to Exit");
 				System.out.print("\nSelect a Salad type: ");
