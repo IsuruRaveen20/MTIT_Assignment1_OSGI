@@ -3,4 +3,5 @@
     <fullyQualifiedTypeName name="publisher_faluda.ServicePublisherImpl"/>
     <fullyQualifiedTypeName name="publisher_faluda.FaludaPublisher"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="publisher_soup.SoupPublisher"/>
 </qualifiedTypeNameHistroy>
