@@ -24,7 +24,7 @@ public class Activator implements BundleActivator {
 	public void start(BundleContext context) throws Exception {
 		
 		double total = 0;
-	    int category, type, sel;
+	    int category, type = 0, sel;
 	    ArrayList<String> PurchasedProducts = new ArrayList<String>(); 
 	        
 		serviceReferenceMilkShake = context.getServiceReference(MilkShakePublisher.class.getName());
@@ -42,7 +42,8 @@ public class Activator implements BundleActivator {
         
         System.out.println("Fruit Items & Juice : ");
         System.out.println("1. Milk Shake");
-        System.out.println("2. Salad\n");
+        System.out.println("2. Salad");
+        System.out.println("3. Soup\n");
         
         
         try {
@@ -91,15 +92,42 @@ public class Activator implements BundleActivator {
 
 					saladPublisher.displaySalad(type);
 					System.out.println("\nType -1 to exit from the Current Type.");
-					System.out.print("\nSelect Salad Vaient: ");
+					System.out.print("\nSelect Salad Varient: ");
 					sel = scanner.nextInt();
 					while (sel != -1) {
 						total += saladPublisher.getPrice(type, sel);
 						PurchasedProducts.add(saladPublisher.getName(type, sel));
-						System.out.print("Select Salad Vaient: ");						 //check size
+						System.out.print("Select Salad Varient: ");						 
 						sel = scanner.nextInt();
 					}
 					System.out.print("\nSelect a Salad Type: ");
+					type = scanner.nextInt();
+				}
+			}
+			
+			else if(category == 3) {
+				System.out.println("Soup Types : ");
+				System.out.println("1. Chiken Soup");
+				System.out.println("2. Vegitable Soup");
+				System.out.println("3. Noodles Soup");
+				System.out.println("4. SeaFood Soup");
+				
+				System.out.println("\nPress O to Exit from the System");
+				System.out.print("\nSelect a Soup Type: ");
+				type = scanner.nextInt();
+				while(type != 0){
+					
+					soupPublisher.displaySoup(type);
+					System.out.println("\nType -1 to exit from the Current Type.");
+					System.out.print("\nSelect Soup Varient: ");
+					sel = scanner.nextInt();
+					while( sel != -1) {
+						total += soupPublisher.getPrice(type, sel);
+						PurchasedProducts.add(soupPublisher.getName(type, sel));
+						System.out.print("Select Soup Varient: ");
+						sel = scanner.nextInt();
+					}
+					System.out.print("\nSelect a Soup Type: ");
 					type = scanner.nextInt();
 				}
 			}

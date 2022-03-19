@@ -43,7 +43,8 @@ public class Activator implements BundleActivator {
 		
 		System.out.println("Fruit Items & Juice :");
 		System.out.println("1. Milk Shake");
-		System.out.println("2. Salad\n");
+		System.out.println("2. Salad");
+		System.out.println("3. Soup\n");
 		
 		try {
 			System.out.println("Select a Type");
