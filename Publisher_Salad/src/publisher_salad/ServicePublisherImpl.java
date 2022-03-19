@@ -10,20 +10,20 @@ public class ServicePublisherImpl implements SaladPublisher {
 	HashMap<String, Double> fruit_salad = new HashMap<String, Double>();
 	
 	public ServicePublisherImpl() {
-		dinner_Salad.put("Slaw Salad", 250.0);
-		dinner_Salad.put("Honey Lime Rainbow Salad", 550.0);
+		//Salad Types and Prices
+		dinner_Salad.put("Slaw Salad", 250.00);
+		dinner_Salad.put("Honey Lime Rainbow Salad", 550.00);
 		
-		taco_Salad.put("Cabeza Taco Salad", 400.0);
-		taco_Salad.put("Campechanos Taco Salad", 500.0);
-		taco_Salad.put("Chorizo Taco Salad", 700.0);
+		taco_Salad.put("Cabeza Taco Salad", 400.00);
+		taco_Salad.put("Campechanos Taco Salad", 500.00);
+		taco_Salad.put("Chorizo Taco Salad", 700.00);
 		
-		Chiken_Salad.put("Grilled Chiken Salad", 1500.0);
-		Chiken_Salad.put("Fried Chiken Salad", 1200.0);
+		Chiken_Salad.put("Grilled Chiken Salad", 1500.00);
+		Chiken_Salad.put("Fried Chiken Salad", 1200.00);
 		
-		fruit_salad.put("Spinach Apple Salad", 250.0);
-		fruit_salad.put("Mixed Fruit Salad", 300.0);
-		fruit_salad.put("Perfect Summer Fruit Salad", 350.0);
-		
+		fruit_salad.put("Spinach Apple Salad", 250.00);
+		fruit_salad.put("Mixed Fruit Salad", 300.00);
+		fruit_salad.put("Perfect Summer Fruit Salad", 350.00);
 	}
 	
 	@Override
@@ -35,7 +35,7 @@ public class ServicePublisherImpl implements SaladPublisher {
 				for(String name1 : dinner_Salad.keySet()) {
 					String key1 = name1.toString();
 					String value1 = dinner_Salad.get(name1).toString();
-					System.out.println(count + ". " + key1 + " :- Rs" +value1);
+					System.out.println(count + ". " + key1 + " :- Rs" + value1);
 					count++;
 				};
 				break;
@@ -90,13 +90,13 @@ public class ServicePublisherImpl implements SaladPublisher {
 			else if(type == 2) {
 				switch (salad) {
 					case 1:
-						price = taco_Salad.get("Cabeza Taco Salad");
+						price = taco_Salad.get("Chorizo Taco Salad");
 						break;
 					case 2:
 						price = taco_Salad.get("Campechanos Taco Salad");
 						break;
 					case 3:
-						price = taco_Salad.get("Chorizo Taco Salad");
+						price = taco_Salad.get("Cabeza Taco Salad");
 						break;
 				}	
 			}
@@ -104,10 +104,10 @@ public class ServicePublisherImpl implements SaladPublisher {
 			else if(type == 3) {
 				switch (salad) {
 					case 1:
-						price = Chiken_Salad.get("Grilled Chiken Salad");
+						price = Chiken_Salad.get("Fried Chiken Salad");
 						break;
 					case 2:
-						price = Chiken_Salad.get("Fried Chiken Salad");
+						price = Chiken_Salad.get("Grilled Chiken Salad");
 						break;
 				}	
 			}
@@ -144,23 +144,23 @@ public class ServicePublisherImpl implements SaladPublisher {
 		}else if(type == 2) {
 			switch (salad) {
 			case 1:
-				name = "Cabeza Taco Salad";
+				name = "Chorizo Taco Salad";
 				break;
 			case 2:
 				name = "Campechanos Taco Salad";
 				break;
 			case 3:
-				name = "Chorizo Taco Salad";
+				name = "Cabeza Taco Salad";
 				break;
 			}
 			
 		}else if(type == 3) {
 			switch (salad) {
 			case 1:
-				name = "Grilled Chiken Salad";
+				name = "Fried Chiken Salad";
 				break;
 			case 2:
-				name = "Fried Chiken Salad";
+				name = "Grilled Chiken Salad";
 				break;
 			}
 			

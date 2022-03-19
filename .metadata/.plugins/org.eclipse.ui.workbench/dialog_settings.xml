@@ -16,6 +16,8 @@
 		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
 		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
 		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\RaveeN\Desktop\tttttttttttttt\sdfsdfsdf\kk.zip"/>
+			<item value="C:\Users\RaveeN\Desktop\tttttttttttttt\eetet.zip"/>
 			<item value="C:\Users\RaveeN\Desktop\MITIT.zip"/>
 			<item value="MTIT.zip"/>
 		</list>

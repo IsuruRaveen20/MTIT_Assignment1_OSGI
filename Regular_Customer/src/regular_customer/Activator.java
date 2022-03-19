@@ -106,7 +106,7 @@ public class Activator implements BundleActivator {
 				}
 			}
 			
-			discount = (tot * 5) / 100; 
+			discount = (tot * 2) / 100; 
 			System.out.println("Your Purchased Products: " + PurchasedProducts );
 			System.out.println("Discount Amount: Rs" + discount);
 			System.out.println("Total : Rs" + (tot - discount));

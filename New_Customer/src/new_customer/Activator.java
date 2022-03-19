@@ -82,7 +82,7 @@ public class Activator implements BundleActivator {
 				System.out.println("\nSalad Type: ");
 				System.out.println("1.  Dinner Salad");
 				System.out.println("2.  Taco Salad");
-				System.out.println("3.  Chickern Salad");
+				System.out.println("3.  Chicken Salad");
 				System.out.println("4.  Fruit Salad");
 
 				System.out.println("\nPress O to Exit from the System");
@@ -144,7 +144,7 @@ public class Activator implements BundleActivator {
 	
 	@Override
 	public void stop(BundleContext context) throws Exception {
-		System.out.println("New Coustomer Stopped.");
+		System.out.println("New Customer Stopped.");
 		context.ungetService(serviceReferenceMilkShake);
 		context.ungetService(serviceReferenceSalad);
 		context.ungetService(serviceReferenceSoup);

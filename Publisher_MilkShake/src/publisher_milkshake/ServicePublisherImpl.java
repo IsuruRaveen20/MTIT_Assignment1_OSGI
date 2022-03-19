@@ -75,7 +75,7 @@ public class ServicePublisherImpl implements MilkShakePublisher {
     
     public double getPrice(int type, int milkShake) {
        
-    	double price = 0.0;
+    	double price = 0.00;
         if (type == 1) {
             switch(milkShake) {
             	case 1:
