@@ -35,9 +35,9 @@ public class ServicePublisherImpl implements MilkShakePublisher {
 				String value1 = nutella_milkShake.get(name1).toString();
 				System.out.println(count + ". " + key1 + " :- Rs" +value1);
 				count++;
-            }
-
-            return;
+            };
+            break;
+            
         case 2:
             count = 1;
 
@@ -46,9 +46,9 @@ public class ServicePublisherImpl implements MilkShakePublisher {
 				String value2 = choclate_milkShake.get(name2).toString();
 				System.out.println(count + ". " + key2 + " :- Rs" +value2);
 				count++;
-            }
-
-            return;
+            };
+            break;
+            
         case 3:
             count = 1;
 
@@ -57,9 +57,9 @@ public class ServicePublisherImpl implements MilkShakePublisher {
             	String value3 = vanila_milkShake.get(name3).toString();
 				System.out.println(count + ". " + key3 + " :- Rs" +value3);
 				count++;
-            }
-
-            return;
+            };
+            break;
+            
         case 4:
             count = 1;
 
@@ -68,9 +68,9 @@ public class ServicePublisherImpl implements MilkShakePublisher {
 				String value4 = oreo_milkShake.get(name4).toString();
 				System.out.println(count + ". " + key4 + " :- Rs" +value4);
 				count++;
-            }
+            };
+            break;
         }
-
     }
     
     public double getPrice(int type, int milkShake) {
@@ -78,82 +78,91 @@ public class ServicePublisherImpl implements MilkShakePublisher {
     	double price = 0.0;
         if (type == 1) {
             switch(milkShake) {
-            case 1:
-                price = (Double)this.nutella_milkShake.get("TakeAway");
-                break;
-            case 2:
-                price = (Double)this.nutella_milkShake.get("Glass");
-                break;
-            }
-        } else if (type == 2) {
+            	case 1:
+            		price = (Double)this.nutella_milkShake.get("TakeAway");
+            		break;
+                
+            	case 2:
+            		price = (Double)this.nutella_milkShake.get("Glass");
+            		break;
+                  }
+        } 
+        else if (type == 2) {
             switch(milkShake) {
-            case 1:
-                price = (Double)this.choclate_milkShake.get("TakeAway");
-                break;
-            case 2:
-                price = (Double)this.choclate_milkShake.get("Glass");
-                break;
-            }
-        } else if (type == 3) {
+            	case 1:
+            		price = (Double)this.choclate_milkShake.get("TakeAway");
+            		break;
+            	case 2:
+            		price = (Double)this.choclate_milkShake.get("Glass");
+            		break;
+            	}
+        } 
+        else if (type == 3) {
             switch(milkShake) {
-            case 1:
-                price = (Double)this.vanila_milkShake.get("TakeAway");
-                break;
-            case 2:
-                price = (Double)this.vanila_milkShake.get("Glass");
-                break;
-            }
+            	case 1:
+            		price = (Double)this.vanila_milkShake.get("TakeAway");
+            		break;
+            	case 2:
+            		price = (Double)this.vanila_milkShake.get("Glass");
+            		break;
+            	}
         } else if (type == 4) {
-            switch(milkShake) {
-            case 1:
-                price = (Double)this.oreo_milkShake.get("TakeAway");
-                break;
-            case 2:
-                price = (Double)this.oreo_milkShake.get("Glass");
-                break;
-        }
-      }
-	  return price;       
+            	switch(milkShake) {
+            		case 1:
+            			price = (Double)this.oreo_milkShake.get("TakeAway");
+            			break;
+            		case 2:
+            			price = (Double)this.oreo_milkShake.get("Glass");
+            			break;
+            	}
+        }   
+        return price;       
 }
     
     public String getName(int type, int milkShake) {
         String name = "";
+        
         if (type == 1) {
             switch(milkShake) {
-            case 1:
-                name = "Glass";
-                break;
-            case 2:
-                name = "TakeAway";
-                break;
-            }
-        } else if (type == 2) {
-            switch(milkShake) {
-            case 1:
-                name = "Glass";
-                break;
-            case 2:
-                name = "TakeAway";
-                break;
+            	case 1:
+            		name = "Glass";
+            		break;
+            		
+            	case 2:
+            		name = "TakeAway";
+            		break;
             }
         } 
+        
+        else if (type == 2) {
+            switch(milkShake) {
+            	case 1:
+            		name = "Glass";
+            		break;
+            	case 2:
+            		name = "TakeAway";
+            		break;
+            }
+        }
+        
         else if (type == 3) {
             switch(milkShake) {
-            case 1:
-                name = "Glass";
-                break;
-            case 2:
-                name = "TakeAway";
-                break;
-            }
-        } else if (type == 4) {
+            	case 1:
+            		name = "Glass";
+            		break;
+            	case 2:
+            		name = "TakeAway";
+            		break;
+            	}
+        } 
+        else if (type == 4) {
             switch(milkShake) {
-            case 1:
-                name = "Glass";
-                break;
-            case 2:
-                name = "TakeAway";
-                break;
+            	case 1:
+            		name = "Glass";
+            		break;
+            	case 2:
+            		name = "TakeAway";
+            		break;
             }
         }
         return name;

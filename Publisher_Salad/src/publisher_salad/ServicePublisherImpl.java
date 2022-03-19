@@ -30,63 +30,65 @@ public class ServicePublisherImpl implements SaladPublisher {
 	public void displaySalad(int a) {
 		int count ;
 		switch (a) {
-		case 1:
-			count = 1 ;
-			for(String name1 : dinner_Salad.keySet()) {
-				String key1 = name1.toString();
-				String value1 = dinner_Salad.get(name1).toString();
-				System.out.println(count + ". " + key1 + " :- Rs" +value1);
-				count++;
-			};
-			break;
-		case 2:
-			count = 1 ;
-			for(String name2 : taco_Salad.keySet()) {
-				String key2 = name2.toString();
-				String value2 = taco_Salad.get(name2).toString();
-				System.out.println(count + ". " + key2 + " :- Rs" +value2);
-				count++;
-			};
-			break;
+			case 1:
+				count = 1 ;
+				for(String name1 : dinner_Salad.keySet()) {
+					String key1 = name1.toString();
+					String value1 = dinner_Salad.get(name1).toString();
+					System.out.println(count + ". " + key1 + " :- Rs" +value1);
+					count++;
+				};
+				break;
+			case 2:
+				count = 1 ;
+				for(String name2 : taco_Salad.keySet()) {
+					String key2 = name2.toString();
+					String value2 = taco_Salad.get(name2).toString();
+					System.out.println(count + ". " + key2 + " :- Rs" +value2);
+					count++;
+				};
+				break;
 			
-		case 3: 
-			count = 1 ;
-			for(String name3 : Chiken_Salad.keySet()) {
-				String key3 = name3.toString();
-				String value3 = Chiken_Salad.get(name3).toString();
-				System.out.println(count + ". " + key3 + " :- Rs" +value3);
-				count++;
-			};
-			break;
+			case 3: 
+				count = 1 ;
+				for(String name3 : Chiken_Salad.keySet()) {
+					String key3 = name3.toString();
+					String value3 = Chiken_Salad.get(name3).toString();
+					System.out.println(count + ". " + key3 + " :- Rs" +value3);
+					count++;
+				};
+				break;
 			
-		case 4:
-			count = 1 ;
-			for(String name4 : fruit_salad.keySet()) {
-				String key4 = name4.toString();
-				String value4 = fruit_salad.get(name4).toString();
-				System.out.println(count + ". " + key4 + " :- Rs" +value4);
-				count++;
-			};
-			break;
+			case 4:
+				count = 1 ;
+				for(String name4 : fruit_salad.keySet()) {
+					String key4 = name4.toString();
+					String value4 = fruit_salad.get(name4).toString();
+					System.out.println(count + ". " + key4 + " :- Rs" +value4);
+					count++;
+				};
+				break;
 		}
 		count = 0;
-}
+	}
 		
 	@Override
 	public double getPrice(int type, int salad) {
 		// TODO Auto-generated method stub
-				double price = 0; 
-				if(type == 1) {
-					switch (salad) {
+		double price = 0; 
+			if(type == 1) {
+				switch (salad) {
 					case 1:
 						price = dinner_Salad.get("Slaw Salad");
 						break;
 					case 2:
 						price = dinner_Salad.get("Honey Lime Rainbow Salad");
 						break;
-					}
-				}else if(type == 2) {
-					switch (salad) {
+				}
+			}
+			
+			else if(type == 2) {
+				switch (salad) {
 					case 1:
 						price = taco_Salad.get("Cabeza Taco Salad");
 						break;
@@ -96,20 +98,22 @@ public class ServicePublisherImpl implements SaladPublisher {
 					case 3:
 						price = taco_Salad.get("Chorizo Taco Salad");
 						break;
-					}
-					
-				}else if(type == 3) {
-					switch (salad) {
+				}	
+			}
+			
+			else if(type == 3) {
+				switch (salad) {
 					case 1:
 						price = Chiken_Salad.get("Grilled Chiken Salad");
 						break;
 					case 2:
 						price = Chiken_Salad.get("Fried Chiken Salad");
 						break;
-					}
-					
-				}else if(type == 4) {
-					switch (salad) {
+				}	
+			}
+			
+			else if(type == 4) {
+				switch (salad) {
 					case 1:
 						price = fruit_salad.get("Spinach Apple Salad");
 						break;
@@ -119,9 +123,9 @@ public class ServicePublisherImpl implements SaladPublisher {
 					case 3:
 						price = fruit_salad.get("Perfect Summer Fruit Salad");
 						break;
-					}	
-				}
-				return price;	
+				}	
+			}
+			return price;	
 	}
 
 	@Override
@@ -163,10 +167,10 @@ public class ServicePublisherImpl implements SaladPublisher {
 		}else if(type == 4) {
 			switch (salad) {
 			case 1:
-				name = "Spinach Apple Salad";
+				name = "Mixed Fruit Salad";
 				break;
 			case 2:
-				name = "Mixed Fruit Salad";
+				name = "Spinach Apple Salad";
 				break;
 			case 3:
 				name = "Perfect Summer Fruit Salad";

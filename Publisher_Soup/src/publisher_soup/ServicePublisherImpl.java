@@ -80,53 +80,54 @@ public class ServicePublisherImpl implements SoupPublisher {
 		double price = 0; 
 		if(type == 1) {
 			switch (soup) {
-			case 1:
-				price = chicken_Soup.get("Cream Chiken Soup");
-				break;
-			case 2:
-				price = chicken_Soup.get("Galic Chiken Soup");
-				break;
-			case 3:
-				price = chicken_Soup.get("BBQ Chicken Soup");
-				break;
+				case 1:
+					price = chicken_Soup.get("Cream Chiken Soup");
+					break;
+				case 2:
+					price = chicken_Soup.get("Galic Chiken Soup");
+					break;
+				case 3:
+					price = chicken_Soup.get("BBQ Chicken Soup");
+					break;
 			}
-		}else if(type == 2) {
+		}
+		else if(type == 2) {
 			switch (soup) {
-			case 1:
-				price = vegitable_Soup.get("Carrtot Soup");
-				break;
-			case 2:
-				price = vegitable_Soup.get("Beans Soup");
-				break;
-			case 3:
-				price = vegitable_Soup.get("Mixed Vegatable Soup");
-				break;
+				case 1:
+					price = vegitable_Soup.get("Carrtot Soup");
+					break;
+				case 2:
+					price = vegitable_Soup.get("Beans Soup");
+					break;
+				case 3:
+					price = vegitable_Soup.get("Mixed Vegatable Soup");
+					break;
+				}
+		}
+		else if(type == 3) {
+			switch (soup) {
+				case 1:
+					price = noodles_soup.get("Thai Red Curry Chicken Noodles Soup");
+					break;
+				case 2:
+					price = noodles_soup.get("Italian Noodles Soup");
+					break;
+				case 3:
+					price = noodles_soup.get("Asian Chicken Corn Noodles Soup");
+					break;
 			}
-			
-		}else if(type == 3) {
+		}
+		else if(type == 4) {
 			switch (soup) {
-			case 1:
-				price = noodles_soup.get("Thai Red Curry Chicken Noodles Soup");
-				break;
-			case 2:
-				price = noodles_soup.get("Italian Noodles Soup");
-				break;
-			case 3:
-				price = noodles_soup.get("Asian Chicken Corn Noodles Soup");
-				break;
-			}
-			
-		}else if(type == 4) {
-			switch (soup) {
-			case 1:
-				price = seaFood_soup.get("Fish Soup");
-				break;
-			case 2:
-				price = seaFood_soup.get("Oyster Soup");
-				break;
-			case 3:
-				price = seaFood_soup.get("Lobster Soup");
-				break;
+				case 1:
+					price = seaFood_soup.get("Fish Soup");
+					break;
+				case 2:
+					price = seaFood_soup.get("Oyster Soup");
+					break;
+				case 3:
+					price = seaFood_soup.get("Lobster Soup");
+					break;
 			}	
 		}
 		return price;
@@ -138,53 +139,57 @@ public class ServicePublisherImpl implements SoupPublisher {
 		String name = ""; 
 		if(type == 1) {
 			switch (soup) {
-			case 1:
-				name = "Cream Chiken Soup";
-				break;
-			case 2:
-				name = "Galic Chiken Soup";
-				break;
-			case 3:
-				name = "BBQ Chicken Soup";
-				break;
+				case 1:
+					name = "Cream Chiken Soup";
+					break;
+				case 2:
+					name = "Galic Chiken Soup";
+					break;
+				case 3:
+					name = "BBQ Chicken Soup";
+					break;
 			}
-		}else if(type == 2) {
+		}
+		
+		else if(type == 2) {
 			switch (soup) {
-			case 1:
-				name = "Carrtot Soup";
-				break;
-			case 2:
-				name = "Beans Soup";
-				break;
-			case 3:
-				name = "Mixed Vegatable Soup";
-				break;
-			}
-			
-		}else if(type == 3) {
+				case 1:
+					name = "Carrtot Soup";
+					break;
+				case 2:
+					name = "Beans Soup";
+					break;
+				case 3:
+					name = "Mixed Vegatable Soup";
+					break;
+			}		
+		}
+		
+		else if(type == 3) {
 			switch (soup) {
-			case 1:
-				name = "Thai Red Curry Chicken Noodles Soup";
-				break;
-			case 2:
-				name = "Italian Noodles Soup";
-				break;
-			case 3:
-				name = "Asian Chicken Corn Noodles Soup";
-				break;
-			}
-			
-		}else if(type == 4) {
+				case 1:
+					name = "Thai Red Curry Chicken Noodles Soup";
+					break;
+				case 2:
+					name = "Italian Noodles Soup";
+					break;
+				case 3:
+					name = "Asian Chicken Corn Noodles Soup";
+					break;
+			}	
+		}
+		
+		else if(type == 4) {
 			switch (soup) {
-			case 1:
-				name = "Fish Soup";
-				break;
-			case 2:
-				name = "Oyster Soup";
-				break;
-			case 3:
-				name = "Lobster Soup";
-				break;
+				case 1:
+					name = "Fish Soup";
+					break;
+				case 2:
+					name = "Oyster Soup";
+					break;
+				case 3:
+					name = "Lobster Soup";
+					break;
 			}	
 		}
 		return name;	

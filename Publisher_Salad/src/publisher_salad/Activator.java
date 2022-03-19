@@ -10,7 +10,8 @@ public class Activator implements BundleActivator {
 	
 	@Override
 	public void start(BundleContext context) throws Exception {
-		System.out.println("Salad Publisher has Started.");
+		
+		System.out.println("Salad Publisher Started\n");
 		SaladPublisher saladPublisher = new ServicePublisherImpl();
 		
 		publisherServiceRegistration = context.registerService(SaladPublisher.class.getName(), saladPublisher,null);
@@ -18,7 +19,8 @@ public class Activator implements BundleActivator {
 	
 	@Override
 	public void stop(BundleContext context) throws Exception {
-		System.out.println("Salad Publisher has Stopped");
+		
+		System.out.println("Salad Publisher Stopped");
 		publisherServiceRegistration.unregister();
 	}
 

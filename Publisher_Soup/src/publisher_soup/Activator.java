@@ -11,7 +11,7 @@ public class Activator implements BundleActivator {
 	@Override
 	public void start(BundleContext context) throws Exception {
 		
-		System.out.println("Soup Publisher Started.");
+		System.out.println("Soup Publisher Started\n");
 		
 		SoupPublisher pizzaPublisher = new ServicePublisherImpl();
 		publisherServiceRegistration = context.registerService(SoupPublisher.class.getName(), pizzaPublisher, null);

@@ -10,6 +10,7 @@ import org.osgi.framework.ServiceReference;
 
 import publisher_milkshake.MilkShakePublisher;
 import publisher_salad.SaladPublisher;
+//import publisher_soup.SoupPublisher;
 import publisher_soup.SoupPublisher;
 
 public class Activator implements BundleActivator {
@@ -35,9 +36,10 @@ public class Activator implements BundleActivator {
 		SaladPublisher saladPublisher = (SaladPublisher) context.getService(serviceReferenceSalad);
 		
 		serviceReferenceSoup = context.getServiceReference(SoupPublisher.class.getName());
-		SoupPublisher soupPublisher = (SaladPublisher) context.getService(serviceReferenceSoup);
+		SoupPublisher soupPublisher = (SoupPublisher) context.getService(serviceReferenceSoup);
 		
-		System.out.println("Regular Customer Started.");
+		System.out.println("Welcome to PnS Juice Bar!");
+		System.out.println("Regular Customer Started\n");
 		
 		System.out.println("Fruit Items & Juice :");
 		System.out.println("1. Milk Shake");
@@ -54,7 +56,7 @@ public class Activator implements BundleActivator {
 				System.out.println("3. Vanila Milk Shake");
 				System.out.println("4. Oreo Milk Shake");
 				
-				System.out.println("\nPress 0 to exit\n");
+				System.out.println("\nPress 0 to exit from the System\n");
 				
 				System.out.println("Select a Milk Shake Type");
 				
@@ -65,6 +67,7 @@ public class Activator implements BundleActivator {
 					System.out.println("\nType -1 to exit from the Current Type.");
 					System.out.println("\nSelect Milk Shake Type");
 					milkShake = scanner.nextInt();
+					
 					while( milkShake != -1) {
 						tot += milkShakePublisher.getPrice(type,milkShake);
 						PurchasedProducts.add(milkShakePublisher.getName(type, milkShake));
@@ -82,7 +85,7 @@ public class Activator implements BundleActivator {
 				System.out.println("3. Chiken Salad");
 				System.out.println("4. Fruit Salad");
 				
-				System.out.println("\nPress O to Exit");
+				System.out.println("\nPress O to Exit from the System");
 				System.out.print("\nSelect a Salad Type: ");
 				type = scanner.nextInt();
 				while(type != 0){
@@ -119,5 +122,6 @@ public class Activator implements BundleActivator {
 		System.out.println("Regular Customer Stopped.");
 		context.ungetService(serviceReferenceMilkShake);
 		context.ungetService(serviceReferenceSalad);
+		context.ungetService(serviceReferenceSoup);
 	}
 }

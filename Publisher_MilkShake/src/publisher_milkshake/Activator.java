@@ -12,14 +12,15 @@ public class Activator implements BundleActivator {
     }
 	
 	public void start(BundleContext context) throws Exception {
-		System.out.println("Milk Shake Publisher has Started.");
+		System.out.println("\nMilk Shake Publisher Started\n");
+		
         MilkShakePublisher milkShakePublisher = new ServicePublisherImpl();
-        this.publisherServiceRegistration = context.registerService(MilkShakePublisher.class.getName(), milkShakePublisher, (Dictionary)null);
+        publisherServiceRegistration = context.registerService(MilkShakePublisher.class.getName(), milkShakePublisher,null);
 	}
 	
 	public void stop(BundleContext context) throws Exception {
 		System.out.println("Milk Shake has Stopped");
-		this.publisherServiceRegistration.unregister();
+		publisherServiceRegistration.unregister();
 	}
 
 }

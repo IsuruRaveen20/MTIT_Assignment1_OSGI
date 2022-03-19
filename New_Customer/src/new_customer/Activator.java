@@ -9,11 +9,13 @@ import org.osgi.framework.ServiceReference;
 
 import publisher_milkshake.MilkShakePublisher;
 import publisher_salad.SaladPublisher;
+import publisher_soup.SoupPublisher;
 
 public class Activator implements BundleActivator {
 	
 	ServiceReference serviceReferenceMilkShake;
     ServiceReference serviceReferenceSalad;
+    ServiceReference serviceReferenceSoup;
     
     Scanner scanner = new Scanner(System.in);
 
@@ -21,20 +23,27 @@ public class Activator implements BundleActivator {
 	@Override
 	public void start(BundleContext context) throws Exception {
 		
+		double total = 0;
+	    int category, type, sel;
+	    ArrayList<String> PurchasedProducts = new ArrayList<String>(); 
+	        
 		serviceReferenceMilkShake = context.getServiceReference(MilkShakePublisher.class.getName());
 		MilkShakePublisher milkShakePublisher = (MilkShakePublisher) context.getService(serviceReferenceMilkShake);
         
 		serviceReferenceSalad = context.getServiceReference(SaladPublisher.class.getName());
 		SaladPublisher saladPublisher = (SaladPublisher) context.getService(serviceReferenceSalad);
-    
-        System.out.println("New Customer Started.");
+		
+		serviceReferenceSoup = context.getServiceReference(SoupPublisher.class.getName());
+		SoupPublisher soupPublisher = (SoupPublisher) context.getService(serviceReferenceSoup);
+		
+		System.out.println("Welcome to PnS Juice Bar!");
+		
+        System.out.println("New Customer Started\n");
+        
         System.out.println("Fruit Items & Juice : ");
         System.out.println("1. Milk Shake");
         System.out.println("2. Salad\n");
         
-        double total = 0;
-        int category, type, sel;
-        ArrayList<String> PurchasedItems = new ArrayList<String>(); //should be changed purchase item
         
         try {
 			System.out.print("Select a Type: ");
@@ -59,7 +68,7 @@ public class Activator implements BundleActivator {
 					sel = scanner.nextInt();
 					while (sel != -1) {
 						total += milkShakePublisher.getPrice(type, sel);
-						PurchasedItems.add(milkShakePublisher.getName(type, sel));
+						PurchasedProducts.add(milkShakePublisher.getName(type, sel));
 						System.out.print("Select Milk Shake Option : ");
 						sel = scanner.nextInt();
 
@@ -75,26 +84,26 @@ public class Activator implements BundleActivator {
 				System.out.println("3.  Chickern Salad");
 				System.out.println("4.  Fruit Salad");
 
-				System.out.println("\nPress O to Exit");
+				System.out.println("\nPress O to Exit from the System");
 				System.out.print("\nSelect a Salad type: ");
 				type = scanner.nextInt();
 				while (type != 0) {
 
 					saladPublisher.displaySalad(type);
 					System.out.println("\nType -1 to exit from the Current Type.");
-					System.out.print("\nSelect Salad Size: ");
+					System.out.print("\nSelect Salad Vaient: ");
 					sel = scanner.nextInt();
 					while (sel != -1) {
 						total += saladPublisher.getPrice(type, sel);
-						PurchasedItems.add(saladPublisher.getName(type, sel));
-						System.out.print("Select Salad Size: ");						 //check size
+						PurchasedProducts.add(saladPublisher.getName(type, sel));
+						System.out.print("Select Salad Vaient: ");						 //check size
 						sel = scanner.nextInt();
 					}
 					System.out.print("\nSelect a Salad Type: ");
 					type = scanner.nextInt();
 				}
 			}
-			System.out.println("Purchased Items: " + PurchasedItems);
+			System.out.println("Purchased Items: " + PurchasedProducts);
 
 			System.out.println("Total : Rs" + total);
 		} catch (InputMismatchException e) {
@@ -107,9 +116,10 @@ public class Activator implements BundleActivator {
 	
 	@Override
 	public void stop(BundleContext context) throws Exception {
-		System.out.println("New Coustomer Has Stopped.");
+		System.out.println("New Coustomer Stopped.");
 		context.ungetService(serviceReferenceMilkShake);
 		context.ungetService(serviceReferenceSalad);
+		context.ungetService(serviceReferenceSoup);
 	}
 
 }
