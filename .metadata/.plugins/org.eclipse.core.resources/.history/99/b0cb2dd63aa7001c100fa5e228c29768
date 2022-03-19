@@ -1,0 +1,8 @@
+package publisher_milkshake;
+
+public interface MilkShakePublisher {
+	public void displayMilkShake(int a);
+	public double getPrice(int type, int pizza);
+	public String getName(int type, int pizza);
+
+}

@@ -23,10 +23,10 @@ public class Activator implements BundleActivator {
 	public void start(BundleContext context) throws Exception {
 		
 		serviceReferenceMilkShake = context.getServiceReference(MilkShakePublisher.class.getName());         
-		MilkShakePublisher burgerPublisher = (MilkShakePublisher) context.getService(serviceReferenceMilkShake);
+		MilkShakePublisher milkShakePublisher = (MilkShakePublisher) context.getService(serviceReferenceMilkShake);
 		
 		serviceReferenceSalad = context.getServiceReference(SaladPublisher.class.getName());
-		SaladPublisher pizzaPublisher = (SaladPublisher) context.getService(serviceReferenceSalad);
+		SaladPublisher saladPublisher = (SaladPublisher) context.getService(serviceReferenceSalad);
 		
 		System.out.println("Regular Customer has Started.");
 		
@@ -37,7 +37,7 @@ public class Activator implements BundleActivator {
 		double total = 0;
 		double dis = 0;
 		ArrayList<String> PurchasedItems = new ArrayList<String>();
-		int category, type, sel, count =0;
+		int category, type, sel, count = 0;
 		
 		try {
 			System.out.println("Select a Type");
@@ -67,7 +67,6 @@ public class Activator implements BundleActivator {
 						System.out.print("Select Milk Shake Type: ");
 						sel = scanner.nextInt();
 					}
-//					return 0;
 					System.out.println("\nSelect a Milk Shake Type : ");
 					type = scanner.nextInt();
 				}
@@ -98,6 +97,7 @@ public class Activator implements BundleActivator {
 					type = scanner.nextInt();
 				}
 			}
+			
 			dis = (total * 5) / 100; 
 			System.out.println("Purchased Items: " + PurchasedItems );
 			System.out.println("Discount Amount: Rs" + dis);

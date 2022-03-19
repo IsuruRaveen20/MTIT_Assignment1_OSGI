@@ -6,6 +6,8 @@ import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
 
+	ServiceRegistration publisherServiceRegistration;
+	
 	@Override
 	public void start(BundleContext context) throws Exception {
 		System.out.println("Salad Publisher has Started.");

@@ -7,6 +7,9 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 
+import publisher_milkshake.MilkShakePublisher;
+import publisher_salad.SaladPublisher;
+
 public class Activator implements BundleActivator {
 	
 	ServiceReference serviceReferenceMilkShake;
@@ -22,7 +25,7 @@ public class Activator implements BundleActivator {
 		MilkShakePublisher milkShakePublisher = (MilkShakePublisher) context.getService(serviceReferenceMilkShake);
         
 		serviceReferenceSalad = context.getServiceReference(SaladPublisher.class.getName());
-		SaladPublisher pizzaPublisher = (SaladPublisher) context.getService(serviceReferenceSalad);
+		SaladPublisher saladPublisher = (SaladPublisher) context.getService(serviceReferenceSalad);
     
         System.out.println("New Customer has started.");
         System.out.println("Fruit Items & Juice : ");
@@ -52,16 +55,16 @@ public class Activator implements BundleActivator {
 
 					milkShakePublisher.displayMilkShake(type);
 					System.out.println("\nType -1 to exit from the Current Type.");
-					System.out.print("\nSelect a Milk Shake Flavor : ");
+					System.out.print("\nSelect a Milk Shake Option : ");
 					sel = scanner.nextInt();
 					while (sel != -1) {
 						total += milkShakePublisher.getPrice(type, sel);
 						PurchasedItems.add(milkShakePublisher.getName(type, sel));
-						System.out.print("Select Milk Shake Flavor : ");
+						System.out.print("Select Milk Shake Option : ");
 						sel = scanner.nextInt();
 
 					}
-					System.out.print("\nSelect a Milk Shake type: ");
+					System.out.print("\nSelect a Milk Shake Option: ");
 					type = scanner.nextInt();
 				}
 
@@ -77,13 +80,13 @@ public class Activator implements BundleActivator {
 				type = scanner.nextInt();
 				while (type != 0) {
 
-					pizzaPublisher.displayPizza(type);
+					saladPublisher.displaySalad(type);
 					System.out.println("\nType -1 to exit from the Current Type.");
 					System.out.print("\nSelect Salad Size: ");
 					sel = scanner.nextInt();
 					while (sel != -1) {
-						total += pizzaPublisher.getPrice(type, sel);
-						PurchasedItems.add(pizzaPublisher.getName(type, sel));
+						total += saladPublisher.getPrice(type, sel);
+						PurchasedItems.add(saladPublisher.getName(type, sel));
 						System.out.print("Select Salad Size: ");						 //check size
 						sel = scanner.nextInt();
 					}
@@ -93,9 +96,9 @@ public class Activator implements BundleActivator {
 			}
 			System.out.println("Purchased Items: " + PurchasedItems);
 
-			System.out.println("Total : $" + total);
+			System.out.println("Total : Rs" + total);
 		} catch (InputMismatchException e) {
-			System.out.println("Integer Should be Entered.! " + e.getMessage());
+			System.out.println("The value should be Integer.! " + e.getMessage());
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

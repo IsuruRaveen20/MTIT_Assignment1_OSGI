@@ -5,71 +5,74 @@ import java.util.Iterator;
 
 public class ServicePublisherImpl implements MilkShakePublisher {
 	
-	HashMap<String, Double> nutella_milkShake = new HashMap();
-    HashMap<String, Double> choclate_milkShake = new HashMap();
-    HashMap<String, Double> vanila_milkShake = new HashMap();
-    HashMap<String, Double> oreo_milkShake = new HashMap();
+	HashMap<String, Double> nutella_milkShake = new HashMap <String, Double>();
+    HashMap<String, Double> choclate_milkShake = new HashMap <String, Double>();
+    HashMap<String, Double> vanila_milkShake = new HashMap <String, Double>();
+    HashMap<String, Double> oreo_milkShake = new HashMap <String, Double>();
     
     public ServicePublisherImpl() {
         this.nutella_milkShake.put("Glass", 740.0);
         this.nutella_milkShake.put("TakeAway", 800.0);
+        
         this.choclate_milkShake.put("Glass", 600.0);
         this.choclate_milkShake.put("TakeAway", 750.0);
+        
         this.vanila_milkShake.put("Glass", 600.0);
         this.vanila_milkShake.put("TakeAway", 700.0);
+        
         this.oreo_milkShake.put("Glass", 740.0);
         this.oreo_milkShake.put("TakeAway", 800.0);
     }
     
-    public void displayMilkShake(int mValue) {
+    public void displayMilkShake(int type) {
         int count;
-        String name;
-        Iterator i;
-        String key4;
-        String value4;
+//        String name;
+//        Iterator i;
+//        String key4;
+//        String value4;
         
-        switch(mValue) {
+        switch(type) {
         case 1:
             count = 1;
 
-            for(i = this.nutella_milkShake.keySet().iterator(); i.hasNext(); ++count) {
-                name = (String)i.next();
-                key4 = name.toString();
-                value4 = ((Double)this.nutella_milkShake.get(name)).toString();
-                System.out.println(count + ". " + key4 + " :- Rs" + value4);
+            for(String name1 : nutella_milkShake.keySet()) {
+            	String key1 = name1.toString();
+				String value1 = nutella_milkShake.get(name1).toString();
+				System.out.println(count + ". " + key1 + " :- Rs" +value1);
+				count++;
             }
 
             return;
         case 2:
             count = 1;
 
-            for(i = this.choclate_milkShake.keySet().iterator(); i.hasNext(); ++count) {
-                name = (String)i.next();
-                key4 = name.toString();
-                value4 = ((Double)this.choclate_milkShake.get(name)).toString();
-                System.out.println(count + ". " + key4 + " :- Rs" + value4);
+            for(String name2 : choclate_milkShake.keySet()) {
+            	String key2 = name2.toString();
+				String value2 = choclate_milkShake.get(name2).toString();
+				System.out.println(count + ". " + key2 + " :- Rs" +value2);
+				count++;
             }
 
             return;
         case 3:
             count = 1;
 
-            for(i = this.vanila_milkShake.keySet().iterator(); i.hasNext(); ++count) {
-                name = (String)i.next();
-                key4 = name.toString();
-                value4 = ((Double)this.vanila_milkShake.get(name)).toString();
-                System.out.println(count + ". " + key4 + " :- Rs" + value4);
+            for(String name3 : vanila_milkShake.keySet()) {
+            	String key3 = name3.toString();
+            	String value3 = vanila_milkShake.get(name3).toString();
+				System.out.println(count + ". " + key3 + " :- Rs" +value3);
+				count++;
             }
 
             return;
         case 4:
             count = 1;
 
-            for(i = this.oreo_milkShake.keySet().iterator(); i.hasNext(); ++count) {
-                name = (String)i.next();
-                key4 = name.toString();
-                value4 = ((Double)this.oreo_milkShake.get(name)).toString();
-                System.out.println(count + ". " + key4 + " :- Rs" + value4);
+            for(String name4 : oreo_milkShake.keySet()) {
+            	String key4 = name4.toString();
+				String value4 = oreo_milkShake.get(name4).toString();
+				System.out.println(count + ". " + key4 + " :- Rs" +value4);
+				count++;
             }
         }
 
@@ -77,7 +80,7 @@ public class ServicePublisherImpl implements MilkShakePublisher {
     
     public double getPrice(int type, int milkShake) {
        
-    	double price = 0.0D;
+    	double price = 0.0;
         if (type == 1) {
             switch(milkShake) {
             case 1:
