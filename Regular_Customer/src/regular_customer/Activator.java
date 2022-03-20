@@ -27,7 +27,7 @@ public class Activator implements BundleActivator {
 		double total = 0;
 		double discount = 0;
 		int count = 0;
-		int category, type, milkShake;
+		int category, type, checker;
 		ArrayList<String> PurchasedOrder = new ArrayList<String>();
 		
 		//Service Reference for MilkShake service
@@ -76,13 +76,13 @@ public class Activator implements BundleActivator {
 					milkShakePublisher.displayMilkShake(type);
 					System.out.println("\nType -1 to exit from the Current Type.");
 					System.out.println("\nSelect Milk Shake Type");
-					milkShake = scanner.nextInt();
+					checker = scanner.nextInt();
 					
-					while( milkShake != -1) {
-						total += milkShakePublisher.getPrice(type,milkShake);
-						PurchasedOrder.add(milkShakePublisher.getName(type, milkShake));
+					while( checker != -1) {
+						total += milkShakePublisher.getPrice(type,checker);
+						PurchasedOrder.add(milkShakePublisher.getName(type, checker));
 						System.out.print("Select Milk Shake Type: ");
-						milkShake = scanner.nextInt();
+						checker = scanner.nextInt();
 					}
 					System.out.println("\nSelect a Milk Shake Type : ");
 					type = scanner.nextInt();
@@ -108,12 +108,12 @@ public class Activator implements BundleActivator {
 					saladPublisher.displaySalad(type);
 					System.out.println("\nType -1 to exit from the Current Type.");
 					System.out.print("\nSelect Salad Varient: ");
-					milkShake = scanner.nextInt();
-					while( milkShake != -1) {
-						total += saladPublisher.getPrice(type, milkShake);
-						PurchasedOrder.add(saladPublisher.getName(type, milkShake));
+					checker = scanner.nextInt();
+					while( checker != -1) {
+						total += saladPublisher.getPrice(type, checker);
+						PurchasedOrder.add(saladPublisher.getName(type, checker));
 						System.out.print("Select Salad Varient: ");
-						milkShake = scanner.nextInt();
+						checker = scanner.nextInt();
 					}
 					System.out.print("\nSelect a Salad Varient: ");
 					type = scanner.nextInt();
@@ -139,12 +139,12 @@ public class Activator implements BundleActivator {
 					soupPublisher.displaySoup(type);
 					System.out.println("\nType -1 to exit from the Current Type.");
 					System.out.print("\nSelect Soup Varient: ");
-					milkShake = scanner.nextInt();
-					while( milkShake != -1) {
-						total += soupPublisher.getPrice(type, milkShake);
-						PurchasedOrder.add(soupPublisher.getName(type, milkShake));
+					checker = scanner.nextInt();
+					while( checker != -1) {
+						total += soupPublisher.getPrice(type, checker);
+						PurchasedOrder.add(soupPublisher.getName(type, checker));
 						System.out.print("Select Soup Varient: ");
-						milkShake = scanner.nextInt();
+						checker = scanner.nextInt();
 					}
 					System.out.print("\nSelect a Soup Varient: ");
 					type = scanner.nextInt();

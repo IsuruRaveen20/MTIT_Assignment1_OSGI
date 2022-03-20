@@ -24,7 +24,7 @@ public class Activator implements BundleActivator {
 		
 		double total = 0;
 	    int category, type = 0;
-	    int checker; //use to identify -1 press to exit or not
+	    int checker; 
 	    ArrayList<String> PurchasedOrder = new ArrayList<String>(); 
 	    
 	    //Service Reference for MilkShake service
@@ -82,7 +82,6 @@ public class Activator implements BundleActivator {
 						PurchasedOrder.add(milkShakePublisher.getName(type, checker));
 						System.out.print("Select Milk Shake Option : ");
 						checker = scanner.nextInt();
-//						System.out.print(checker);
 
 					}
 					System.out.print("\nSelect a Milk Shake Option: ");
