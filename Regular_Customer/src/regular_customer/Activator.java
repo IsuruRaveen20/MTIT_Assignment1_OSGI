@@ -24,23 +24,28 @@ public class Activator implements BundleActivator {
 	@Override
 	public void start(BundleContext context) throws Exception {
 		
-		double tot = 0;
+		double total = 0;
 		double discount = 0;
-		ArrayList<String> PurchasedProducts = new ArrayList<String>();
-		int category, type, milkShake, count = 0;
+		int count = 0;
+		int category, type, milkShake;
+		ArrayList<String> PurchasedOrder = new ArrayList<String>();
 		
+		//Service Reference for MilkShake service
 		serviceReferenceMilkShake = context.getServiceReference(MilkShakePublisher.class.getName());         
 		MilkShakePublisher milkShakePublisher = (MilkShakePublisher) context.getService(serviceReferenceMilkShake);
 		
+		//Service Reference for Salad service
 		serviceReferenceSalad = context.getServiceReference(SaladPublisher.class.getName());
 		SaladPublisher saladPublisher = (SaladPublisher) context.getService(serviceReferenceSalad);
 		
+		//Service Reference for Soup service
 		serviceReferenceSoup = context.getServiceReference(SoupPublisher.class.getName());
 		SoupPublisher soupPublisher = (SoupPublisher) context.getService(serviceReferenceSoup);
 		
 		System.out.println("Welcome to PnS Juice Bar!");
 		System.out.println("Regular Customer Started\n");
 		
+		//Display Food Options
 		System.out.println("Fruit Items & Juice :");
 		System.out.println("1. Milk Shake");
 		System.out.println("2. Salad");
@@ -50,7 +55,10 @@ public class Activator implements BundleActivator {
 			System.out.println("Select a Type");
 			category = scanner.nextInt();
 			
+			//MilkShake Category
 			if(category == 1) {
+				
+				//Display Available Options
 				System.out.println("\nMilk Shake Types");
 				System.out.println("1. Nutella Milk Shake");
 				System.out.println("2. Choclate Milk Shake");
@@ -61,6 +69,7 @@ public class Activator implements BundleActivator {
 				
 				System.out.println("Select a Milk Shake Type");
 				
+				//Getting input via keyboard
 				type = scanner.nextInt();
 				while(type != 0) {
 					
@@ -70,16 +79,19 @@ public class Activator implements BundleActivator {
 					milkShake = scanner.nextInt();
 					
 					while( milkShake != -1) {
-						tot += milkShakePublisher.getPrice(type,milkShake);
-						PurchasedProducts.add(milkShakePublisher.getName(type, milkShake));
+						total += milkShakePublisher.getPrice(type,milkShake);
+						PurchasedOrder.add(milkShakePublisher.getName(type, milkShake));
 						System.out.print("Select Milk Shake Type: ");
 						milkShake = scanner.nextInt();
 					}
 					System.out.println("\nSelect a Milk Shake Type : ");
 					type = scanner.nextInt();
 				}
-				
+			
+			//Salad Category
 			}else if(category == 2) {
+				
+				//Display Available Options
 				System.out.println("Salad Types : ");
 				System.out.println("1. Dinner Salad");
 				System.out.println("2. Taco Salad");
@@ -88,6 +100,8 @@ public class Activator implements BundleActivator {
 				
 				System.out.println("\nPress O to Exit from the System");
 				System.out.print("\nSelect a Salad Type: ");
+				
+				//Getting input via keyboard
 				type = scanner.nextInt();
 				while(type != 0){
 					
@@ -96,20 +110,53 @@ public class Activator implements BundleActivator {
 					System.out.print("\nSelect Salad Varient: ");
 					milkShake = scanner.nextInt();
 					while( milkShake != -1) {
-						tot += saladPublisher.getPrice(type, milkShake);
-						PurchasedProducts.add(saladPublisher.getName(type, milkShake));
-						System.out.print("Select Salad Size: ");
+						total += saladPublisher.getPrice(type, milkShake);
+						PurchasedOrder.add(saladPublisher.getName(type, milkShake));
+						System.out.print("Select Salad Varient: ");
 						milkShake = scanner.nextInt();
 					}
-					System.out.print("\nSelect a Salad Type: ");
+					System.out.print("\nSelect a Salad Varient: ");
+					type = scanner.nextInt();
+				}
+
+			//Soup Category
+			}else if(category == 3) {
+				
+				//Display Available Options
+				System.out.println("Soup Types : ");
+				System.out.println("1. Chiken Soup");
+				System.out.println("2. Vegitable Soup");
+				System.out.println("3. Noodles Soup");
+				System.out.println("4. SeaFood Soup");
+				
+				System.out.println("\nPress O to Exit from the System");
+				System.out.print("\nSelect a Soup Type: ");
+				
+				//Getting input via keyboard
+				type = scanner.nextInt();
+				while(type != 0){
+					
+					soupPublisher.displaySoup(type);
+					System.out.println("\nType -1 to exit from the Current Type.");
+					System.out.print("\nSelect Soup Varient: ");
+					milkShake = scanner.nextInt();
+					while( milkShake != -1) {
+						total += soupPublisher.getPrice(type, milkShake);
+						PurchasedOrder.add(soupPublisher.getName(type, milkShake));
+						System.out.print("Select Soup Varient: ");
+						milkShake = scanner.nextInt();
+					}
+					System.out.print("\nSelect a Soup Varient: ");
 					type = scanner.nextInt();
 				}
 			}
 			
-			discount = (tot * 2) / 100; 
-			System.out.println("Your Purchased Products: " + PurchasedProducts );
+			//Calculating discount - 2%
+			discount = (total * 2) / 100; 
+			System.out.println("Your Order: " + PurchasedOrder );
 			System.out.println("Discount Amount: Rs" + discount);
-			System.out.println("Total : Rs" + (tot - discount));
+			System.out.println("Total: Rs" + total + " - "+ discount);
+			System.out.println("Total : Rs" + (total - discount));
 			
 		}catch(InputMismatchException e) {
 			System.out.println("Please Enter Only Integers! " + e.getMessage());
@@ -121,6 +168,7 @@ public class Activator implements BundleActivator {
 	@Override
 	public void stop(BundleContext context) throws Exception {
 		System.out.println("Regular Customer Stopped.");
+		System.out.println("Thank you, Come Again!!");
 		context.ungetService(serviceReferenceMilkShake);
 		context.ungetService(serviceReferenceSalad);
 		context.ungetService(serviceReferenceSoup);

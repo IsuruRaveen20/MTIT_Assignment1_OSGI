@@ -19,7 +19,6 @@ public class Activator implements BundleActivator {
     
     Scanner scanner = new Scanner(System.in);
 
-    
 	@Override
 	public void start(BundleContext context) throws Exception {
 		
@@ -58,6 +57,8 @@ public class Activator implements BundleActivator {
 			
 			//MilkShake Category
 			if (category == 1) {
+				
+				//Display Available Options
 				System.out.println("\nMilk Shake Types: ");
 				System.out.println("1. Nutella Milk Shake");
 				System.out.println("2. Choclate Milk Shake");
@@ -66,6 +67,8 @@ public class Activator implements BundleActivator {
 
 				System.out.println("\nPress O to Exit from the System\n");
 				System.out.print("Select a type: ");
+				
+				//Getting input via keyboard
 				type = scanner.nextInt();
 
 				while (type != 0) {
@@ -79,7 +82,7 @@ public class Activator implements BundleActivator {
 						PurchasedOrder.add(milkShakePublisher.getName(type, checker));
 						System.out.print("Select Milk Shake Option : ");
 						checker = scanner.nextInt();
-						System.out.print(checker);
+//						System.out.print(checker);
 
 					}
 					System.out.print("\nSelect a Milk Shake Option: ");
@@ -88,6 +91,8 @@ public class Activator implements BundleActivator {
 
 			//Salad Category
 			} else if (category == 2) {
+				
+				//Display Available Options
 				System.out.println("\nSalad Type: ");
 				System.out.println("1.  Dinner Salad");
 				System.out.println("2.  Taco Salad");
@@ -96,6 +101,8 @@ public class Activator implements BundleActivator {
 
 				System.out.println("\nPress O to Exit from the System");
 				System.out.print("\nSelect a Salad type: ");
+				
+				//Getting input via keyboard
 				type = scanner.nextInt();
 				while (type != 0) {
 
@@ -105,6 +112,7 @@ public class Activator implements BundleActivator {
 					checker = scanner.nextInt();
 					while (checker != -1) {
 						total += saladPublisher.getPrice(type, checker);
+						PurchasedOrder.add(saladPublisher.getName(type, checker));
 						System.out.print("Select Salad Varient: ");						 
 						checker = scanner.nextInt();
 					}
@@ -115,6 +123,8 @@ public class Activator implements BundleActivator {
 			
 			//Soup Category
 			else if(category == 3) {
+				
+				//Display Available Options
 				System.out.println("Soup Types : ");
 				System.out.println("1. Chiken Soup");
 				System.out.println("2. Vegitable Soup");
@@ -123,6 +133,8 @@ public class Activator implements BundleActivator {
 				
 				System.out.println("\nPress O to Exit from the System");
 				System.out.print("\nSelect a Soup Type: ");
+				
+				//Getting input via keyboard
 				type = scanner.nextInt();
 				while(type != 0){
 					

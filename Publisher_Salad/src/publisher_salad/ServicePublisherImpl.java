@@ -27,44 +27,44 @@ public class ServicePublisherImpl implements SaladPublisher {
 	}
 	
 	@Override
-	public void displaySalad(int a) {
+	public void displaySalad(int salad) {
 		int count ;
-		switch (a) {
+		switch (salad) {
 			case 1:
 				count = 1 ;
-				for(String name1 : dinner_Salad.keySet()) {
-					String key1 = name1.toString();
-					String value1 = dinner_Salad.get(name1).toString();
-					System.out.println(count + ". " + key1 + " :- Rs" + value1);
+				for(String dinnerSalad_Name : dinner_Salad.keySet()) {
+//					String key1 = dinnerSalad_Name.toString();
+					String value1 = dinner_Salad.get(dinnerSalad_Name).toString();
+					System.out.println(count + ". " + dinnerSalad_Name + " :- Rs" + value1);
 					count++;
 				};
 				break;
 			case 2:
 				count = 1 ;
-				for(String name2 : taco_Salad.keySet()) {
-					String key2 = name2.toString();
-					String value2 = taco_Salad.get(name2).toString();
-					System.out.println(count + ". " + key2 + " :- Rs" +value2);
+				for(String tacoSalad_Name : taco_Salad.keySet()) {
+//					String key2 = name2.toString();
+					String value2 = taco_Salad.get(tacoSalad_Name).toString();
+					System.out.println(count + ". " + tacoSalad_Name + " :- Rs" +value2);
 					count++;
 				};
 				break;
 			
 			case 3: 
 				count = 1 ;
-				for(String name3 : Chiken_Salad.keySet()) {
-					String key3 = name3.toString();
-					String value3 = Chiken_Salad.get(name3).toString();
-					System.out.println(count + ". " + key3 + " :- Rs" +value3);
+				for(String chikenSalad_Name : Chiken_Salad.keySet()) {
+//					String key3 = name3.toString();
+					String value3 = Chiken_Salad.get(chikenSalad_Name).toString();
+					System.out.println(count + ". " + chikenSalad_Name + " :- Rs" +value3);
 					count++;
 				};
 				break;
 			
 			case 4:
 				count = 1 ;
-				for(String name4 : fruit_salad.keySet()) {
-					String key4 = name4.toString();
-					String value4 = fruit_salad.get(name4).toString();
-					System.out.println(count + ". " + key4 + " :- Rs" +value4);
+				for(String fruitSalad_Name : fruit_salad.keySet()) {
+//					String key4 = name4.toString();
+					String value4 = fruit_salad.get(fruitSalad_Name).toString();
+					System.out.println(count + ". " + fruitSalad_Name + " :- Rs" +value4);
 					count++;
 				};
 				break;

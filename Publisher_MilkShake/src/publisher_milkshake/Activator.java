@@ -19,7 +19,7 @@ public class Activator implements BundleActivator {
 	}
 	
 	public void stop(BundleContext context) throws Exception {
-		System.out.println("Milk Shake has Stopped");
+		System.out.println("Milk Shake Publisher Stopped");
 		publisherServiceRegistration.unregister();
 	}
 

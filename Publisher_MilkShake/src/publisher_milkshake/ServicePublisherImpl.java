@@ -30,10 +30,10 @@ public class ServicePublisherImpl implements MilkShakePublisher {
         case 1:
             count = 1;
 
-            for(String name1 : nutella_milkShake.keySet()) {
-            	String key1 = name1.toString();
-				String value1 = nutella_milkShake.get(name1).toString();
-				System.out.println(count + ". " + key1 + " :- Rs" +value1);
+            for(String nutellaMilkShake_Name : nutella_milkShake.keySet()) {
+//            	String key1 = name1.toString();
+				String nutella_Price = nutella_milkShake.get(nutellaMilkShake_Name).toString();
+				System.out.println(count + ". " + nutellaMilkShake_Name + " :- Rs" +nutella_Price);
 				count++;
             };
             break;
@@ -41,10 +41,10 @@ public class ServicePublisherImpl implements MilkShakePublisher {
         case 2:
             count = 1;
 
-            for(String name2 : choclate_milkShake.keySet()) {
-            	String key2 = name2.toString();
-				String value2 = choclate_milkShake.get(name2).toString();
-				System.out.println(count + ". " + key2 + " :- Rs" +value2);
+            for(String choclateMilkShake_Name : choclate_milkShake.keySet()) {
+//            	String key2 = name2.toString();
+				String choclate_Price = choclate_milkShake.get(choclateMilkShake_Name).toString();
+				System.out.println(count + ". " + choclateMilkShake_Name + " :- Rs" +choclate_Price);
 				count++;
             };
             break;
@@ -52,10 +52,10 @@ public class ServicePublisherImpl implements MilkShakePublisher {
         case 3:
             count = 1;
 
-            for(String name3 : vanila_milkShake.keySet()) {
-            	String key3 = name3.toString();
-            	String value3 = vanila_milkShake.get(name3).toString();
-				System.out.println(count + ". " + key3 + " :- Rs" +value3);
+            for(String vanilaMilkShake_Name : vanila_milkShake.keySet()) {
+//            	String key3 = vanilaMilkShake_Name.toString();
+            	String vanila_Price = vanila_milkShake.get(vanilaMilkShake_Name).toString();
+				System.out.println(count + ". " + vanilaMilkShake_Name + " :- Rs" +vanila_Price);
 				count++;
             };
             break;
@@ -63,10 +63,10 @@ public class ServicePublisherImpl implements MilkShakePublisher {
         case 4:
             count = 1;
 
-            for(String name4 : oreo_milkShake.keySet()) {
-            	String key4 = name4.toString();
-				String value4 = oreo_milkShake.get(name4).toString();
-				System.out.println(count + ". " + key4 + " :- Rs" +value4);
+            for(String oreoMilkShake_Name : oreo_milkShake.keySet()) {
+//            	String key4 = oreoMilkShake_Name.toString();
+				String oreo_Price = oreo_milkShake.get(oreoMilkShake_Name).toString();
+				System.out.println(count + ". " + oreoMilkShake_Name + " :- Rs" +oreo_Price);
 				count++;
             };
             break;
