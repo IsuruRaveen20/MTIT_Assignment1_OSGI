@@ -125,11 +125,11 @@ public class ServicePublisherImpl implements MilkShakePublisher {
         if (type == 1) {
             switch(milkShake) {
             	case 1:
-            		name = "Glass";
+            		name = "TakeAway";
             		break;
             		
             	case 2:
-            		name = "TakeAway";
+            		name = "Glass";
             		break;
             }
         } 
@@ -137,10 +137,10 @@ public class ServicePublisherImpl implements MilkShakePublisher {
         else if (type == 2) {
             switch(milkShake) {
             	case 1:
-            		name = "Glass";
+            		name = "TakeAway";
             		break;
             	case 2:
-            		name = "TakeAway";
+            		name = "Glass";
             		break;
             }
         }
@@ -148,20 +148,20 @@ public class ServicePublisherImpl implements MilkShakePublisher {
         else if (type == 3) {
             switch(milkShake) {
             	case 1:
-            		name = "Glass";
+            		name = "TakeAway";
             		break;
             	case 2:
-            		name = "TakeAway";
+            		name = "Glass";
             		break;
             	}
         } 
         else if (type == 4) {
             switch(milkShake) {
             	case 1:
-            		name = "Glass";
+            		name = "TakeAway";
             		break;
             	case 2:
-            		name = "TakeAway";
+            		name = "Glass";
             		break;
             }
         }
