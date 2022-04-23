@@ -37,7 +37,7 @@ public class Activator implements BundleActivator {
 		SoupPublisher soupPublisher = (SoupPublisher) context.getService(serviceReferenceSoup);
 		
 		System.out.println("Welcome to PnS Juice Bar!");
-		System.out.println("Regular Customer Started\n");
+		System.out.println("VIP Customer Started\n");
 		
 		System.out.println("Fruit Items & Juice :");
 		System.out.println("1. Milk Shake");
@@ -135,7 +135,9 @@ public class Activator implements BundleActivator {
 		System.out.println("Your Purchased Products: " + PurchasedProducts );
 		System.out.println("Discount Amount: Rs" + discount);
 		System.out.println("Total : Rs" + (tot - discount));
-			
+		
+		//prompt keyboard input.From this program will not end and bcz of that it will not display an error
+		type = scanner.nextInt();	
 		}catch(InputMismatchException e) {
 			System.out.println("Please Enter Only Integers! " + e.getMessage());
 		}catch(Exception e) {
@@ -145,7 +147,7 @@ public class Activator implements BundleActivator {
 	
 	@Override
 	public void stop(BundleContext context) throws Exception {
-		System.out.println("Regular Customer Stopped.");
+		System.out.println("VIP Customer Stopped.");
 		context.ungetService(serviceReferenceMilkShake);
 		context.ungetService(serviceReferenceSalad);
 		context.ungetService(serviceReferenceSoup);
